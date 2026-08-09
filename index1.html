@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Needle Drop — Daily Song Guess</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="cabinet">
+
+    <header class="header">
+      <p class="eyebrow">Today's spin · <span id="dayLabel"></span></p>
+      <h1 class="logo">NEEDLE&nbsp;DROP</h1>
+      <p class="tagline">Guess the track in 6 spins or fewer.</p>
+    </header>
+
+    <section class="deck" aria-label="Audio player">
+      <audio id="audio" preload="metadata"></audio>
+
+      <button id="playBtn" class="play-btn" aria-label="Play clip">
+        <svg id="playIcon" viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+        <svg id="pauseIcon" viewBox="0 0 24 24" width="26" height="26" fill="currentColor" style="display:none">
+          <path d="M6 5h4v14H6zM14 5h4v14h-4z"/>
+        </svg>
+      </button>
+
+      <div class="meter" id="meter" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+
+      <p class="clip-readout"><span id="clipLen">1</span>s clip</p>
+    </section>
+
+    <section class="tape-counter" id="tapeCounter" aria-label="Attempts">
+      <div class="reel reel-left" aria-hidden="true"></div>
+      <div class="digits" id="digits"></div>
+      <div class="reel reel-right" aria-hidden="true"></div>
+    </section>
+
+    <form class="guess-form" id="guessForm" autocomplete="off">
+      <input
+        type="text"
+        id="guessInput"
+        class="guess-input"
+        placeholder="Type the song title…"
+        aria-label="Your guess"
+      >
+      <button type="submit" class="submit-btn">Guess</button>
+    </form>
+
+    <p class="feedback" id="feedback" aria-live="polite"></p>
+
+    <footer class="footer">
+      <p>Built with the Needle Drop starter kit · swap in your own tracks in <code>script.js</code></p>
+    </footer>
+
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
